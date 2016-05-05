@@ -1,9 +1,8 @@
-  # 1. Update config values (localhost --> mongo and localhost --> redis) in config.development.env
-  # 2. Set WHEREUAT_API_APP_ENV environment variable to the proper value in Dockerfile-redis (default is "development")
+  # 1. Set WHEREUAT_API_APP_ENV environment variable to the proper value in Dockerfile-redis (default is "development")
   #    export WHEREUAT_API_APP_ENV=development
   #    - or in PowerShell -
   #    $env:WHEREUAT_API_APP_ENV = "development"
-  # 3. create the rethinkdb data volume
+  # 2. create the rethinkdb data volume
   #    docker volume create --name rethinkdata
   # 3. Run docker-compose build
   # 4. Run docker-compose up -d
