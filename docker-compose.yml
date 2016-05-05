@@ -1,0 +1,113 @@
+  # 1. Update config values (localhost --> mongo and localhost --> redis) in config.development.env
+  # 2. Set WHEREUAT_API_APP_ENV environment variable to the proper value in Dockerfile-redis (default is "development")
+  #    export WHEREUAT_API_APP_ENV=development
+  #    - or in PowerShell -
+  #    $env:WHEREUAT_API_APP_ENV = "development"
+  # 3. create the rethinkdb data volume
+  #    docker volume create --name rethinkdata
+  # 3. Run docker-compose build
+  # 4. Run docker-compose up -d
+  # 5. May the force be with you!
+
+
+version: '2'
+services:
+
+  nginx:
+      container_name: nginx
+      image: whereuatninja/nginx
+      build: 
+        context: .
+        dockerfile: docker/nginx.dockerfile
+      links:
+        - node1:node1
+        - node2:node2
+        - node3:node3
+      ports:
+        - "80:80"
+        - "443:443"
+      networks:
+        - nodeapp-network
+
+  node1:
+    container_name: whereuat-api-node1
+    image: whereuatninja/node-api
+    build:
+      context: .
+      dockerfile: docker/node.dockerfile
+    links:
+        - redis:redis
+        - rethinkdb:rethinkdb
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/var/www/"
+    env_file:
+      - ./docker/env/app.${WHEREUAT_API_APP_ENV}.env
+    networks:
+      - nodeapp-network
+
+  node2:
+    container_name: whereuat-api-node2
+    image: whereuatninja/node-api
+    build:
+      context: .
+      dockerfile: docker/node.dockerfile
+    links:
+        - redis:redis
+        - rethinkdb:rethinkdb
+    ports:
+      - "3001:3000"
+    volumes:
+      - ".:/var/www/"
+    env_file:
+      - ./docker/env/app.${WHEREUAT_API_APP_ENV}.env
+    networks:
+      - nodeapp-network
+
+  node3:
+    container_name: whereuat-api-node3
+    image: whereuatninja/node-api
+    build:
+      context: .
+      dockerfile: docker/node.dockerfile
+    links:
+        - redis:redis
+        - rethinkdb:rethinkdb
+    ports:
+      - "3002:3000"
+    volumes:
+      - ".:/var/www/"
+    env_file:
+      - ./docker/env/app.${WHEREUAT_API_APP_ENV}.env
+    networks:
+      - nodeapp-network
+
+
+  redis:
+    container_name: redis
+    build:
+      context: .
+      dockerfile: docker/redis.dockerfile
+    ports:
+      - "6379"
+    env_file:
+      - ./docker/env/app.${WHEREUAT_API_APP_ENV}.env
+    networks:
+      - nodeapp-network
+
+  rethinkdb:
+    container_name: rethinkdb
+    image: rethinkdb:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - nodeapp-network
+
+volumes:
+  rethinkdata:
+    external: true
+
+networks:
+  nodeapp-network:
+    driver: bridge
