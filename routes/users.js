@@ -8,8 +8,11 @@ module.exports = function(app) {
     });
     /* Read */
     app.get('/users', function ( req, res ) {
-        //todo add get stuff
-        res.json({"hello":"world!"});
+        db.findAllUsers(function( err, users ) {
+            if (err) { throw err; }
+            res.json(users);
+        });
+        //res.json({"hello":"world!"});
     });
 
     app.get('/users/:id', function ( req, res ) {

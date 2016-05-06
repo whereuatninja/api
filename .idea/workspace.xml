@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fa3f086-e651-418f-ae21-a0cb0b583be0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/whereuat_api_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/whereuat-api.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/db.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/user.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testdb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node.dockerfile" afterPath="$PROJECT_DIR$/node.dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/www" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/models/user.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/error.hbs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/layout.hbs" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/db.js" afterPath="$PROJECT_DIR$/lib/db.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="whereuat-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="377">
+              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -77,13 +68,13 @@
         <option value="$PROJECT_DIR$/lib/database.js" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/models/user.js" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/lib/db.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/node.dockerfile" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/lib/db.js" />
+        <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
       </list>
     </option>
   </component>
@@ -154,35 +145,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="whereuat-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="whereuat-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="whereuat-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="whereuat-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -633,12 +596,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1462562458823</updated>
-      <workItem from="1462562461006" duration="10995000" />
+      <workItem from="1462562461006" duration="12940000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10995000" />
+    <option name="totallyTimeSpent" value="12940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="0" />
@@ -701,104 +664,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding>
-            <marker date="1462574165212" expanded="true" signature="396:520" placeholder="{&quot;host&quot;: 'rethinkdb'...}" />
-            <marker date="1462574165212" expanded="true" signature="472:518" placeholder="{&quot;locations&quot;: 'id'...}" />
-            <marker date="1462574165212" expanded="true" signature="523:725" placeholder="/** Connect to RethinkDB instance and perform a basic database setup: ...*/" />
-            <marker date="1462574165212" expanded="true" signature="760:1646" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="831:1642" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="918:1636" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="934:1068" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="1080:1163" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="1203:1630" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="1235:1615" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="1320:1603" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="1342:1483" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="1501:1591" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="1699:2186" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="1740:2182" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="1938:2176" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="1954:2100" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="2112:2170" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="2216:3017" placeholder="/** Find a user by email using the ...*/" />
-            <marker date="1462574165212" expanded="true" signature="3077:3925" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="3118:3921" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="3355:3915" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="3371:3523" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="3535:3908" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="3577:3898" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="3597:3796" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="3812:3858" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="3928:4408" placeholder="/** Every user document is assigned a unique id when created. Retrieving ...*/" />
-            <marker date="1462574165212" expanded="true" signature="4467:4858" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="4508:4854" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="4600:4848" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="4616:4763" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="4775:4816" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="4895:5736" placeholder="/** To find the last `max_results` messages ordered by `timestamp`, ...*/" />
-            <marker date="1462574165212" expanded="true" signature="5800:6539" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="5841:6535" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="5972:6529" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="5988:6161" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="6173:6523" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="6221:6513" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="6241:6407" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="6423:6473" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="6543:7155" placeholder="/** To save a new chat message using we are using ...*/" />
-            <marker date="1462574165212" expanded="true" signature="7210:7700" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="7251:7696" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="7346:7690" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="7362:7501" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="7513:7658" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="7549:7592" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="7606:7650" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="7703:8199" placeholder="/** Adding a new user to database using  [`insert`](http://www.rethinkdb.com/api/javascript/insert/). ...*/" />
-            <marker date="1462574165212" expanded="true" signature="8252:8735" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="8293:8731" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="8383:8725" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="8399:8535" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="8547:8693" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="8584:8627" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="8641:8685" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="8764:8933" placeholder="/** A wrapper function for the RethinkDB API `r.connect` ...*/" />
-            <marker date="1462574165212" expanded="true" signature="8963:9179" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="9048:9175" placeholder="{...}" />
-            <marker date="1462574165212" expanded="true" signature="9181:9639" placeholder="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <marker date="1462574165219" expanded="true" signature="0:403" placeholder="{&quot;name&quot;: &quot;whereuat-api&quot;...}" />
-            <marker date="1462574165219" expanded="true" signature="82:117" placeholder="{&quot;start&quot;: &quot;node ./bin/www&quot;...}" />
-            <marker date="1462574165219" expanded="true" signature="137:401" placeholder="{&quot;assert&quot;: &quot;~1.3.0&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <marker date="1462574165206" expanded="true" signature="456:573" placeholder="//..." />
-            <marker date="1462574165206" expanded="true" signature="889:961" placeholder="{...}" />
-            <marker date="1462574165206" expanded="true" signature="1008:1061" placeholder="//..." />
-            <marker date="1462574165206" expanded="true" signature="1100:1265" placeholder="{...}" />
-            <marker date="1462574165206" expanded="true" signature="1142:1261" placeholder="{...}" />
-            <marker date="1462574165206" expanded="true" signature="1203:1255" placeholder="{...}" />
-            <marker date="1462574165206" expanded="true" signature="1267:1327" placeholder="//..." />
-            <marker date="1462574165206" expanded="true" signature="1366:1472" placeholder="{...}" />
-            <marker date="1462574165206" expanded="true" signature="1423:1468" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -849,6 +719,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node.dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -857,53 +735,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state relative-caret-position="580">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <marker date="1462574165223" expanded="true" signature="89:640" placeholder="{...}" />
-            <marker date="1462574165223" expanded="true" signature="95:107" placeholder="/*...*/" />
-            <marker date="1462574165223" expanded="true" signature="154:192" placeholder="{...}" />
-            <marker date="1462574165223" expanded="true" signature="199:209" placeholder="/*...*/" />
-            <marker date="1462574165223" expanded="true" signature="254:328" placeholder="{...}" />
-            <marker date="1462574165223" expanded="true" signature="380:416" placeholder="{...}" />
-            <marker date="1462574165223" expanded="true" signature="424:436" placeholder="/*...*/" />
-            <marker date="1462574165223" expanded="true" signature="485:524" placeholder="{...}" />
-            <marker date="1462574165223" expanded="true" signature="532:544" placeholder="/*...*/" />
-            <marker date="1462574165223" expanded="true" signature="596:635" placeholder="{...}" />
+            <marker date="1462574165219" expanded="true" signature="0:403" placeholder="{&quot;name&quot;: &quot;whereuat-api&quot;...}" />
+            <marker date="1462574165219" expanded="true" signature="82:117" placeholder="{&quot;start&quot;: &quot;node ./bin/www&quot;...}" />
+            <marker date="1462574165219" expanded="true" signature="137:401" placeholder="{&quot;assert&quot;: &quot;~1.3.0&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="70" column="42" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+          <folding>
+            <marker date="1462576037213" expanded="true" signature="396:520" placeholder="{&quot;host&quot;: 'rethinkdb'...}" />
+            <marker date="1462576037213" expanded="true" signature="472:518" placeholder="{&quot;locations&quot;: 'id'...}" />
+            <marker date="1462576037213" expanded="true" signature="523:725" placeholder="/** Connect to RethinkDB instance and perform a basic database setup: ...*/" />
+            <marker date="1462576037213" expanded="true" signature="760:1646" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="831:1642" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="918:1636" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="934:1068" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="1080:1163" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="1203:1630" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="1235:1615" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="1320:1603" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="1342:1483" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="1501:1591" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="1699:2564" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="1740:2560" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="1938:2554" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="1954:2131" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="2143:2548" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="2194:2538" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="2214:2428" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="2444:2527" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="2594:3395" placeholder="/** Find a user by email using the ...*/" />
+            <marker date="1462576037213" expanded="true" signature="3455:4303" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="3496:4299" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="3733:4293" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="3749:3901" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="3913:4286" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="3955:4276" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="3975:4174" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="4190:4236" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="4306:4786" placeholder="/** Every user document is assigned a unique id when created. Retrieving ...*/" />
+            <marker date="1462576037213" expanded="true" signature="4845:5236" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="4886:5232" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="4978:5226" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="4994:5141" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="5153:5194" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="5273:6114" placeholder="/** To find the last `max_results` messages ordered by `timestamp`, ...*/" />
+            <marker date="1462576037213" expanded="true" signature="6178:6917" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="6219:6913" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="6350:6907" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="6366:6539" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="6551:6901" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="6599:6891" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="6619:6785" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="6801:6851" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="6921:7533" placeholder="/** To save a new chat message using we are using ...*/" />
+            <marker date="1462576037213" expanded="true" signature="7588:8078" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="7629:8074" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="7724:8068" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="7740:7879" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="7891:8036" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="7927:7970" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="7984:8028" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="8081:8577" placeholder="/** Adding a new user to database using  [`insert`](http://www.rethinkdb.com/api/javascript/insert/). ...*/" />
+            <marker date="1462576037213" expanded="true" signature="8630:9113" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="8671:9109" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="8761:9103" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="8777:8913" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="8925:9071" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="8962:9005" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="9019:9063" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="9142:9311" placeholder="/** A wrapper function for the RethinkDB API `r.connect` ...*/" />
+            <marker date="1462576037213" expanded="true" signature="9341:9557" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="9426:9553" placeholder="{...}" />
+            <marker date="1462576037213" expanded="true" signature="9559:10017" placeholder="//..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="42" />
+        <state relative-caret-position="261">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding>
-            <marker date="1462574165222" expanded="true" signature="97:117" placeholder="/*...*/" />
-            <marker date="1462574165222" expanded="true" signature="159:421" placeholder="{...}" />
-            <marker date="1462574165222" expanded="true" signature="205:384" placeholder="{...}" />
+            <marker date="1462576142042" expanded="true" signature="89:239" placeholder="{...}" />
+            <marker date="1462576142042" expanded="true" signature="94:104" placeholder="/*...*/" />
+            <marker date="1462576142042" expanded="true" signature="142:234" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="464">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <marker date="1462574165225" expanded="false" signature="0:42" placeholder="/** Created by jshaloo on 5/6/2016. ...*/" />
-            <marker date="1462574165225" expanded="true" signature="230:252" placeholder="{&quot;extended&quot;: true...}" />
-            <marker date="1462574165225" expanded="true" signature="360:424" placeholder="{...}" />
+            <marker date="1462574683456" expanded="false" signature="0:42" placeholder="/** Created by jshaloo on 5/6/2016. ...*/" />
+            <marker date="1462574683456" expanded="true" signature="230:252" placeholder="{&quot;extended&quot;: true...}" />
+            <marker date="1462574683456" expanded="true" signature="407:471" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="377">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
           <folding />
         </state>
       </provider>

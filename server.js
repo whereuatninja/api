@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
 
 db.setup();
 
+var index = require('./routes/index.js')(app);
 var users = require('./routes/users.js')(app);
 
 var server = app.listen(3000, function () {
