@@ -17,7 +17,7 @@ services:
       image: whereuatninja/nginx:development
       build: 
         context: .
-        dockerfile: docker/nginx.dockerfile
+        dockerfile: nginx.dockerfile
       links:
         - node1:node1
         - node2:node2
@@ -33,7 +33,7 @@ services:
     image: whereuatninja/node-api:development
     build:
       context: .
-      dockerfile: docker/node.dockerfile
+      dockerfile: node.dockerfile
     links:
         - redis:redis
         - rethinkdb:rethinkdb
@@ -51,7 +51,7 @@ services:
     image: whereuatninja/node-api:development
     build:
       context: .
-      dockerfile: docker/node.dockerfile
+      dockerfile: node.dockerfile
     links:
         - redis:redis
         - rethinkdb:rethinkdb
@@ -69,7 +69,7 @@ services:
     image: whereuatninja/node-api:development
     build:
       context: .
-      dockerfile: docker/node.dockerfile
+      dockerfile: node.dockerfile
     links:
         - redis:redis
         - rethinkdb:rethinkdb
@@ -88,7 +88,7 @@ services:
     image: whereuatninja/redis:development
     build:
       context: .
-      dockerfile: docker/redis.dockerfile
+      dockerfile: redis.dockerfile
     ports:
       - "6379"
     env_file:
