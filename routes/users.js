@@ -1,9 +1,29 @@
-var express = require('express');
-var router = express.Router();
+var _ = require('lodash');
+var db = require('../lib/db')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+module.exports = function(app) {
+    /* Create */
+    app.post( '/users', function ( req, res ) {
+       //todo add create stuff
+    });
+    /* Read */
+    app.get('/users', function ( req, res ) {
+        //todo add get stuff
+        res.json({"hello":"world!"});
+    });
 
-module.exports = router;
+    app.get('/users/:id', function ( req, res ) {
+        //todo add get stuff
+    });
+
+    /* Update */
+    app.put('/users/:id', function ( req, res ) {
+        //todo add update stuff
+    });
+
+    /* Delete */
+    app.delete('/users/:id', function ( req, res ) {
+        //todo add delete stuff
+    });
+
+};
