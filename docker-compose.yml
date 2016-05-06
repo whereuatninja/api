@@ -14,7 +14,7 @@ services:
 
   nginx:
       container_name: nginx
-      image: whereuatninja/nginx
+      image: whereuatninja/nginx:development
       build: 
         context: .
         dockerfile: docker/nginx.dockerfile
@@ -30,7 +30,7 @@ services:
 
   node1:
     container_name: whereuat-api-node1
-    image: whereuatninja/node-api
+    image: whereuatninja/node-api:development
     build:
       context: .
       dockerfile: docker/node.dockerfile
@@ -48,7 +48,7 @@ services:
 
   node2:
     container_name: whereuat-api-node2
-    image: whereuatninja/node-api
+    image: whereuatninja/node-api:development
     build:
       context: .
       dockerfile: docker/node.dockerfile
@@ -66,7 +66,7 @@ services:
 
   node3:
     container_name: whereuat-api-node3
-    image: whereuatninja/node-api
+    image: whereuatninja/node-api:development
     build:
       context: .
       dockerfile: docker/node.dockerfile
@@ -85,6 +85,7 @@ services:
 
   redis:
     container_name: redis
+    image: whereuatninja/redis:development
     build:
       context: .
       dockerfile: docker/redis.dockerfile
