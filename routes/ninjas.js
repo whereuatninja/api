@@ -17,14 +17,21 @@ module.exports = function(app) {
         });
     });
 
-    /* Update */
-    app.put('/ninjas/:id', function ( req, res ) {
-        //todo add update stuff
-    });
-
     /* Delete */
-    app.delete('/ninjas/:id', function ( req, res ) {
-        //todo add delete stuff
+    app.delete('/ninjas/:ninja_id', function ( req, res ) {
+        //stop following this ninja
+
+        //for now just hard code the user until we figure out how to get that info from the request
+        username = 'splinter';
+        db.findUserByUsername( username, function( err, user ) {
+            if (err) throw err;
+            db.removeNinjaForUserId( req.params.ninja_id, user.id, function( err, result ) {
+                if (err) { throw err; }
+                res.json(result);
+            });
+        });
+
+
     });
 
 };
