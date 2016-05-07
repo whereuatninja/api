@@ -20,8 +20,8 @@ services:
         dockerfile: nginx.dockerfile
       links:
         - node1:node1
-        - node2:node2
-        - node3:node3
+#        - node2:node2
+#        - node3:node3
       ports:
         - "80:80"
         - "443:443"
@@ -34,11 +34,13 @@ services:
     build:
       context: .
       dockerfile: node.dockerfile
+    entrypoint: pm2 start server.js --name whereuat-api --log /var/log/pm2/pm2.log --watch --no-daemon --node-args="--debug=7000"
     links:
         - redis:redis
         - rethinkdb:rethinkdb
     ports:
       - "3000:3000"
+      - "7000:7000"
     volumes:
       - ".:/var/www/"
     env_file:
@@ -46,41 +48,41 @@ services:
     networks:
       - nodeapp-network
 
-  node2:
-    container_name: whereuat-api-node2
-    image: whereuatninja/node-api:development
-    build:
-      context: .
-      dockerfile: node.dockerfile
-    links:
-        - redis:redis
-        - rethinkdb:rethinkdb
-    ports:
-      - "3001:3000"
-    volumes:
-      - ".:/var/www/"
-    env_file:
-      - ./docker/env/app.${WHEREUAT_API_APP_ENV}.env
-    networks:
-      - nodeapp-network
-
-  node3:
-    container_name: whereuat-api-node3
-    image: whereuatninja/node-api:development
-    build:
-      context: .
-      dockerfile: node.dockerfile
-    links:
-        - redis:redis
-        - rethinkdb:rethinkdb
-    ports:
-      - "3002:3000"
-    volumes:
-      - ".:/var/www/"
-    env_file:
-      - ./docker/env/app.${WHEREUAT_API_APP_ENV}.env
-    networks:
-      - nodeapp-network
+#  node2:
+#    container_name: whereuat-api-node2
+#    image: whereuatninja/node-api:development
+#    build:
+#      context: .
+#      dockerfile: node.dockerfile
+#    links:
+#        - redis:redis
+#        - rethinkdb:rethinkdb
+#    ports:
+#      - "3001:3000"
+#    volumes:
+#      - ".:/var/www/"
+#    env_file:
+#      - ./docker/env/app.${WHEREUAT_API_APP_ENV}.env
+#    networks:
+#      - nodeapp-network
+#
+#  node3:
+#    container_name: whereuat-api-node3
+#    image: whereuatninja/node-api:development
+#    build:
+#      context: .
+#      dockerfile: node.dockerfile
+#    links:
+#        - redis:redis
+#        - rethinkdb:rethinkdb
+#    ports:
+#      - "3002:3000"
+#    volumes:
+#      - ".:/var/www/"
+#    env_file:
+#      - ./docker/env/app.${WHEREUAT_API_APP_ENV}.env
+#    networks:
+#      - nodeapp-network
 
 
   redis:

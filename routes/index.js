@@ -7,6 +7,7 @@ module.exports = function(app) {
   app.get('/', function ( req, res ) {
     //todo figure out what we do at the root context
     res.json({"hello":"world!"});
+    db.setup();
   });
 
 };
