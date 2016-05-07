@@ -1,0 +1,5 @@
+#!/bin/bash
+echo name=$SUMO_COLLECTOR_NAME > /etc/sumo.conf
+echo accessid=$SUMO_ACCESS_ID >> /etc/sumo.conf
+echo accesskey=$SUMO_ACCESS_KEY >> /etc/sumo.conf
+service collector start

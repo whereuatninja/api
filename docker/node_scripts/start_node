@@ -1,0 +1,2 @@
+#!/bin/bash
+pm2 start server.js --name whereuat-api --log /var/log/pm2/pm2.log --watch --no-daemon
