@@ -3,14 +3,14 @@ var db = require('../lib/db')
 
 module.exports = function(app) {
     /* Read */
-    app.get('/ninjas', function ( req, res ) {
+    app.get('/api/ninjas', function ( req, res ) {
         db.findAllUsers(function( err, users ) {
             if (err) { throw err; }
             res.json(users);
         });
     });
 
-    app.get('/ninjas/:id', function ( req, res ) {
+    app.get('/api/ninjas/:id', function ( req, res ) {
         db.findUserById( req.params.id, function( err, user ) {
             if (err) { throw err; }
             res.json(user);
@@ -18,7 +18,7 @@ module.exports = function(app) {
     });
 
     /* Delete */
-    app.delete('/ninjas/:ninja_id', function ( req, res ) {
+    app.delete('/api/ninjas/:ninja_id', function ( req, res ) {
         //stop following this ninja
 
         //for now just hard code the user until we figure out how to get that info from the request

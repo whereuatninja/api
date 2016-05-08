@@ -20,6 +20,7 @@ services:
         dockerfile: nginx.dockerfile
       links:
         - node1:node1
+        - web:web
 #        - node2:node2
 #        - node3:node3
       ports:
@@ -39,7 +40,7 @@ services:
         - redis:redis
         - rethinkdb:rethinkdb
     ports:
-      - "3000:3000"
+      - "3001:3000"
       - "7000:7000"
     volumes:
       - ".:/var/www/"
@@ -47,6 +48,15 @@ services:
       - ./docker/env/app.${WHEREUAT_API_APP_ENV}.env
     networks:
       - nodeapp-network
+
+
+  web:
+    image: whereuatninja/website:develop
+    env_file:
+      - ./docker/env/web.env
+    networks:
+      - nodeapp-network
+
 
 #  node2:
 #    container_name: whereuat-api-node2
