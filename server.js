@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var app = express();
+var jwt = require('express-jwt');
 
 var bodyParser = require('body-parser');
 
@@ -12,6 +13,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+var jwtCheck = jwt({
+  secret: new Buffer('RNRPzl2mV2jBaqF9D5ELhHniCubLkBmSo7OwGYiM1O9lqbgAMTg9X3yi7TuQMQgu', 'base64'),
+  audience: 'F2wSS3rEHorHyW3C9ezB2NnEAClryjcI'
+});
+
+//app.use('/', jwtCheck);
+app.use('/locations', jwtCheck);
+app.use('/ninjas', jwtCheck);
+//app.use('/users', jwtCheck);
+
+
 
 //db.setup();
 
