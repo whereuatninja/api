@@ -20,8 +20,8 @@ var jwtCheck = jwt({
 });
 
 //app.use('/', jwtCheck);
-app.use('/locations', jwtCheck);
-app.use('/ninjas', jwtCheck);
+app.use('/api/locations', jwtCheck);
+app.use('/api/ninjas', jwtCheck);
 //app.use('/users', jwtCheck);
 
 

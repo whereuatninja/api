@@ -4,6 +4,7 @@ var db = require('../lib/db')
 module.exports = function(app) {
     /* Read */
     app.get('/api/ninjas', function ( req, res ) {
+        
         db.findAllUsers(function( err, users ) {
             if (err) { throw err; }
             res.json(users);
