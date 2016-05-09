@@ -4,7 +4,7 @@ var db = require('../lib/db')
 module.exports = function(app) {
 
     /* Create */
-    app.post( '/locations', function ( req, res ) {
+    app.post( '/api/locations', function ( req, res ) {
         //for now just hard code the user until we figure out how to get that info from the request
         username = 'mikey';
         db.findUserByUsername( username, function( err, user ) {
@@ -34,7 +34,7 @@ module.exports = function(app) {
     //     });
     // });
 
-    app.get('/locations/:user_id', function ( req, res ) {
+    app.get('/api/locations/:user_id', function ( req, res ) {
         db.findLocationsByUserId( req.params.user_id, function( err, user ) {
             if (err) { throw err; }
             res.json(user);
@@ -42,12 +42,12 @@ module.exports = function(app) {
     });
 
     /* Update */
-    app.put('/ninjas/:id', function ( req, res ) {
+    app.put('/api/ninjas/:id', function ( req, res ) {
         //todo add update stuff
     });
 
     /* Delete */
-    app.delete('/ninjas/:id', function ( req, res ) {
+    app.delete('/api/ninjas/:id', function ( req, res ) {
         //todo add delete stuff
     });
 
