@@ -42,8 +42,8 @@ services:
     ports:
       - "3001:3000"
       - "7000:7000"
-    volumes:
-      - ".:/var/www/"
+    #volumes:
+    #  - ".:/var/www/"
     env_file:
       - ./docker/env/app.${WHEREUAT_API_APP_ENV}.env
     networks:
