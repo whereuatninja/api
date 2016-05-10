@@ -4,7 +4,7 @@
 var express = require('express');
 var app = express();
 var jwt = require('express-jwt');
-
+var dotenv = require('dotenv');
 var bodyParser = require('body-parser');
 
 var db = require('./lib/db');
@@ -15,16 +15,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 var jwtCheck = jwt({
-  secret: new Buffer('RNRPzl2mV2jBaqF9D5ELhHniCubLkBmSo7OwGYiM1O9lqbgAMTg9X3yi7TuQMQgu', 'base64'),
-  audience: 'F2wSS3rEHorHyW3C9ezB2NnEAClryjcI'
+  secret: new Buffer(process.env.AUTH0_CLIENT_SECRET, 'base64'),
+  audience: process.env.AUTH0_CLIENT_ID
 });
 
-//app.use('/', jwtCheck);
 app.use('/api/locations', jwtCheck);
 app.use('/api/ninjas', jwtCheck);
-//app.use('/users', jwtCheck);
-
-
+app.use('/users', jwtCheck);
 
 //db.setup();
 

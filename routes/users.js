@@ -4,7 +4,7 @@ var db = require('../lib/db')
 module.exports = function(app) {
     /* Create */
     app.post( '/api/users', function ( req, res ) {
-       //todo add create stuff
+       db.addUpdateUser(req.user);
     });
     /* Read */
     app.get('/api/users', function ( req, res ) {

@@ -4,10 +4,10 @@ var db = require('../lib/db')
 module.exports = function(app) {
     /* Read */
     app.get('/api/ninjas', function ( req, res ) {
-        
-        db.findAllUsers(function( err, users ) {
+
+        db.findNinjasForUserID(req.user.sub, function( err, ninjas ) {
             if (err) { throw err; }
-            res.json(users);
+            res.json(ninjas);
         });
     });
 
