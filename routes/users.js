@@ -1,10 +1,11 @@
 var _ = require('lodash');
 var db = require('../lib/db')
+var accounts = require('../lib/dbAccounts')
 
 module.exports = function(app) {
     /* Create */
     app.post( '/api/users', function ( req, res ) {
-       db.addUpdateUser(req.user);
+        accounts.addUpdateUser(req.user);
     });
     /* Read */
     app.get('/api/users', function ( req, res ) {
