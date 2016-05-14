@@ -5,24 +5,19 @@ module.exports = function(app) {
 
     /* Create */
     app.post( '/api/locations', function ( req, res ) {
-        //for now just hard code the user until we figure out how to get that info from the request
-        username = 'mikey';
-        db.findUserByUsername( username, function( err, user ) {
-            if (err) { throw err; }
-            var location = req.body;
-            location['user_id'] = user.id;
+        var userId = req.user.sub;
+        var location = req.body;
+        location['user_id'] = userId;
 
-            if ( location.time == null ) {
-                location.time = new Date();
-            }
-            else {
-                location.time = db.getDateForEpoch(location.time);
-            }
-
-            db.insertLocation(location, function( locErr, result ){
-                if (err) { throw err; }
-                res.json(result);
-            });
+        if ( location.time == null ) {
+            location.time = new Date();
+        }
+        else {
+            location.time = db.getDateForEpoch(location.time);
+        }
+        db.insertLocation(location, function( locErr, result ){
+            if (locErr) { throw locErr; }
+            res.json(result);
         });
     });
 
