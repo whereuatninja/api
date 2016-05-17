@@ -30,7 +30,7 @@ module.exports = function(app) {
     // });
 
     app.get('/api/locations/:user_id', function ( req, res ) {
-        db.findLocationsByUserId( req.user.sub, function( err, user ) {
+        db.findLocationsByUserId( req.params.user_id, function( err, user ) {
             if (err) { throw err; }
             res.json(user);
         });

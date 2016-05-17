@@ -1,13 +1,14 @@
 var _ = require('lodash');
 var db = require('../lib/db')
+var dbAccounts = require('../lib/dbAccounts')
 
 module.exports = function(app) {
     /* Read */
     app.get('/api/ninjas', function ( req, res ) {
       console.log("req.user.sub:"+req.user.sub);
-        db.findNinjasForUserID(req.user.sub, function( err, ninjas ) {
+        dbAccounts.findUserByAuthId(req.user.sub, function(err, user) {
             if (err) { throw err; }
-            res.json(ninjas);
+            res.json(user.ninjas);
         });
     });
 
