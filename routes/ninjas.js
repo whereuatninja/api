@@ -5,8 +5,9 @@ var dbAccounts = require('../lib/dbAccounts');
 module.exports = function(app) {
     /* Read */
     app.get('/api/ninjas', function ( req, res ) {
-      console.log("req.user.sub:"+req.user.sub);
-        dbAccounts.findUserByAuthId(req.user.sub, function(err, user) {
+        console.log("req.user.sub:"+req.user.sub);
+        console.log("req.whereuatUserId:"+req.whereuatUserId);
+        dbAccounts.findUserByUserId(req.whereuatUserId, function(err, user) {
             if (err) { throw err; }
             res.json(user.ninjas);
         });

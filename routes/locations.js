@@ -10,7 +10,7 @@ module.exports = function(app) {
         if (err) { throw err; }
         var userId = user.id;
         var location = req.body;
-        location['user_id'] = userId;
+        location['user_id'] = req.whereuatUserId;
 
         if ( location.time == null ) {
             location.time = new Date();
