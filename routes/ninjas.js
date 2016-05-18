@@ -1,6 +1,6 @@
 var _ = require('lodash');
-var db = require('../lib/db')
-var dbAccounts = require('../lib/dbAccounts')
+var db = require('../lib/db');
+var dbAccounts = require('../lib/dbAccounts');
 
 module.exports = function(app) {
     /* Read */

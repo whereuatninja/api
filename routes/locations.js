@@ -1,11 +1,14 @@
 var _ = require('lodash');
-var db = require('../lib/db')
+var db = require('../lib/db');
+var dbAccounts = require('../lib/dbAccounts');
 
 module.exports = function(app) {
 
     /* Create */
     app.post( '/api/locations', function ( req, res ) {
-        var userId = req.user.sub;
+      dbAccounts.findUserByAuthId(req.user.sub, function(err, user) {
+        if (err) { throw err; }
+        var userId = user.id;
         var location = req.body;
         location['user_id'] = userId;
 
@@ -19,6 +22,7 @@ module.exports = function(app) {
             if (locErr) { throw locErr; }
             res.json(result);
         });
+      });
     });
 
     /* Read */
