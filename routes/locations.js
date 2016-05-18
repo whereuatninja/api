@@ -7,7 +7,7 @@ module.exports = function(app) {
     app.post( '/api/locations', function ( req, res ) {
         var userId = req.user.sub;
         var location = req.body;
-        location['user_id'] = userId;
+        location['user_id'] = req.whereuatUserId;
 
         if ( location.time == null ) {
             location.time = new Date();

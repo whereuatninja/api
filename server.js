@@ -7,6 +7,7 @@ var jwt = require('express-jwt');
 var dotenv = require('dotenv');
 var bodyParser = require('body-parser');
 
+var userIdAuth = require('./userIdAuth');
 var db = require('./lib/db');
 
 app.use(bodyParser.json());
@@ -19,9 +20,9 @@ var jwtCheck = jwt({
   audience: process.env.AUTH0_CLIENT_ID
 });
 
-app.use('/api/locations', jwtCheck);
-app.use('/api/ninjas', jwtCheck);
-app.use('/api/users', jwtCheck);
+app.use('/api/locations', [jwtCheck, userIdAuth]);
+app.use('/api/ninjas', [jwtCheck, userIdAuth]);
+app.use('/api/users', [jwtCheck, userIdAuth]);
 
 //db.setup();
 
