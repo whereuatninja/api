@@ -6,8 +6,10 @@ module.exports = function(app) {
 
     /* Create */
     app.post( '/api/locations', function ( req, res ) {
+        console.log("/locations posted body: %j", req.body);
         var location = req.body;
         location['user_id'] = req.whereuatUserId;
+        console.log("user: "+req.whereuatUserId);
         if ( location.time == null ) {
             location.time = new Date();
         }
