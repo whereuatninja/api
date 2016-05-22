@@ -31,7 +31,9 @@ module.exports = function(app) {
     // });
 
     app.get('/api/locations/:user_id', function ( req, res ) {
-        db.findLocationsByUserId( req.params.user_id, function( err, user ) {
+        var after = parseInt(req.query.after);
+        var before = parseInt(req.query.before);
+        db.findLocationsByUserId( req.params.user_id, after, before, function( err, user ) {
             if (err) { throw err; }
             res.json(user);
         });
