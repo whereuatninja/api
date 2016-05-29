@@ -9,7 +9,10 @@ module.exports = function(app) {
         console.log("req.whereuatUserId:"+req.whereuatUserId);
         dbAccounts.findUserByUserId(req.whereuatUserId, function(err, user) {
             if (err) { throw err; }
-            res.json(user.ninjas);
+            if(user.ninjas)
+                res.json(user.ninjas);
+            else
+                res.json([]);
         });
     });
 

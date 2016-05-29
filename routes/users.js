@@ -1,11 +1,12 @@
 var _ = require('lodash');
-var db = require('../lib/db')
-var accounts = require('../lib/dbAccounts')
+var db = require('../lib/db');
+var accounts = require('../lib/dbAccounts');
 
 module.exports = function(app) {
     /* Create */
     app.post( '/api/users', function ( req, res ) {
         accounts.addUpdateUser(req.user);
+        res.send();
     });
     /* Read */
     app.get('/api/users', function ( req, res ) {
@@ -13,7 +14,6 @@ module.exports = function(app) {
             if (err) { throw err; }
             res.json(users);
         });
-        //res.json({"hello":"world!"});
     });
 
     app.get('/api/users/:id', function ( req, res ) {
