@@ -3,6 +3,16 @@ var db = require('../lib/db');
 var dbAccounts = require('../lib/dbAccounts');
 var rp = require('request-promise');
 
+var geocoderProvider = 'google';
+var httpAdapter = 'https';
+// optional
+var extra = {
+    apiKey: 'AIzaSyAy2jX1ktVrXlTrFaht_ZMYQPlOrJpV7pM', // for Mapquest, OpenCage, Google Premier
+    formatter: null         // 'gpx', 'string', ...
+};
+
+var geocoder = require('node-geocoder')(geocoderProvider, httpAdapter, extra);
+
 module.exports = function(app) {
 
     /* Create */
@@ -18,16 +28,34 @@ module.exports = function(app) {
             location.time = db.getDateForEpoch(location.time);
         }
 
+        geocoder.reverse({lat:location.lat, lon:location.long})
+            .then(function(geoCodingResult) {
+                console.log("geocoder: %j", res);
+                location.city = geoCodingResult[0].city;
+                location.country = geoCodingResult[0].country;
+                if(geoCodingResult[0].extra){
+                    location.neighborhood = geoCodingResult[0].extra.neighborhood || "";
+                }
 
-        getGeoCodingDataFromGoogle(location)
+                db.insertLocation(location, function( locErr, result ){
+                    if (locErr) { throw locErr; }
+                    res.json(result);
+                });
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+
+        /*getGeoCodingDataFromGoogle(location)
         .then(function(json){
-            location.locality = getLocationNameGeocodingData(json, 'locality') || "";
+            location.locality = getLocationNameGeocodingData(json, ['locality', 'political']) || "";
             location.neighborhood = getLocationNameGeocodingData(json, 'neighborhood') || "";
             db.insertLocation(location, function( locErr, result ){
                 if (locErr) { throw locErr; }
                 res.json(result);
             });
-        });
+        });*/
+
     });
 
     /* Read */
@@ -61,7 +89,7 @@ module.exports = function(app) {
 
 function getGeoCodingDataFromGoogle(location){
     var options = {
-        url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+location.lat+','+location.long+'&result_type=locality|neighborhood&key=AIzaSyAy2jX1ktVrXlTrFaht_ZMYQPlOrJpV7pM',
+        url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+location.lat+','+location.long+'&key=AIzaSyAy2jX1ktVrXlTrFaht_ZMYQPlOrJpV7pM',
         method: 'GET',
         json: true
     };
@@ -69,13 +97,14 @@ function getGeoCodingDataFromGoogle(location){
 };
 
 function getLocationNameGeocodingData(json, result_type){
-    var locality;
+    var locality = "";
     try {
         if (json && json.results && json.results.length > 0) {
             var address_components = json.results[0].address_components;
             for (var i = 0; i < address_components.length; i++){
-                var isNeighborhood = doesListHaveType(address_components[i].types, result_type);
-                if(isNeighborhood){
+                var hasType = doesListHaveType(address_components[i].types, result_type);
+                if(hasType){
+                    console.log("type: "+address_components[i].long_name);
                     return address_components[i].long_name;
                 }
             }
@@ -88,5 +117,15 @@ function getLocationNameGeocodingData(json, result_type){
 }
 
 function doesListHaveType(list, type){
-    return _.indexOf(list, type) > -1;
+    if(Array.isArray(type)){
+        for(var i=0;i<type.length;i++){
+            if(_.indexOf(list, type[i]) < 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    else{
+        return _.indexOf(list, type) > -1;
+    }
 }
