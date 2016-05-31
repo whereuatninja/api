@@ -18,12 +18,9 @@ module.exports = function(app) {
             location.time = db.getDateForEpoch(location.time);
         }
 
-        var options = {
-            url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+location.lat+','+location.long+'&result_type=locality|neighborhood&key=AIzaSyAy2jX1ktVrXlTrFaht_ZMYQPlOrJpV7pM',
-            method: 'GET',
-            json: true
-        };
-        rp(options).then(function(json){
+
+        getGeoCodingDataFromGoogle(location)
+        .then(function(json){
             location.locality = getLocationNameGeocodingData(json, 'locality') || "";
             location.neighborhood = getLocationNameGeocodingData(json, 'neighborhood') || "";
             db.insertLocation(location, function( locErr, result ){
@@ -59,6 +56,16 @@ module.exports = function(app) {
     app.delete('/api/ninjas/:id', function ( req, res ) {
         //todo add delete stuff
     });
+};
+
+
+function getGeoCodingDataFromGoogle(location){
+    var options = {
+        url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+location.lat+','+location.long+'&result_type=locality|neighborhood&key=AIzaSyAy2jX1ktVrXlTrFaht_ZMYQPlOrJpV7pM',
+        method: 'GET',
+        json: true
+    };
+    return rp(options).promise();
 };
 
 function getLocationNameGeocodingData(json, result_type){
