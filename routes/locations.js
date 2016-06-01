@@ -30,7 +30,7 @@ module.exports = function(app) {
 
         geocoder.reverse({lat:location.lat, lon:location.long})
             .then(function(geoCodingResult) {
-                console.log("geocoder: %j", res);
+                console.log("geocoder: %j", geoCodingResult);
                 location.city = geoCodingResult[0].city;
                 location.country = geoCodingResult[0].country;
                 if(geoCodingResult[0].extra){
