@@ -45,31 +45,11 @@ module.exports = function(app) {
             .catch(function(err) {
                 console.log(err);
             });
-
-        /*getGeoCodingDataFromGoogle(location)
-        .then(function(json){
-            location.locality = getLocationNameGeocodingData(json, ['locality', 'political']) || "";
-            location.neighborhood = getLocationNameGeocodingData(json, 'neighborhood') || "";
-            db.insertLocation(location, function( locErr, result ){
-                if (locErr) { throw locErr; }
-                res.json(result);
-            });
-        });*/
-
     });
 
-    /* Read */
-    // app.get('/locations', function ( req, res ) {
-    //     db.findAllUsers(function( err, users ) {
-    //         if (err) { throw err; }
-    //         res.json(users);
-    //     });
-    // });
-
     app.get('/api/locations/:user_id', function ( req, res ) {
-        var after = parseInt(req.query.after);
-        var before = parseInt(req.query.before);
-        db.findLocationsByUserId( req.params.user_id, after, before, function( err, user ) {
+        var queryParameters = getLocationsQueryParameters(req.query);
+        db.findLocationsByUserId( req.params.user_id, queryParameters, function( err, user ) {
             if (err) { throw err; }
             res.json(user);
         });
@@ -86,6 +66,20 @@ module.exports = function(app) {
     });
 };
 
+function getLocationsQueryParameters(query){
+    var queryParameters = {};
+    if(query.before){
+        queryParameters.before = parseInt(query.before);
+    }
+    if(query.after){
+        queryParameters.after = parseInt(query.after);
+    }
+    if(query.mostRecent){
+        queryParameters.mostRecent = query.mostRecent;
+    }
+
+    return queryParameters;
+}
 
 function getGeoCodingDataFromGoogle(location){
     var options = {
