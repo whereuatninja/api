@@ -30,12 +30,21 @@ module.exports = function(app) {
 
         geocoder.reverse({lat:location.lat, lon:location.long})
             .then(function(geoCodingResult) {
-                console.log("geocoder: %j", geoCodingResult);
-                location.city = geoCodingResult[0].city;
-                location.country = geoCodingResult[0].country;
-                if(geoCodingResult[0].extra){
-                    location.neighborhood = geoCodingResult[0].extra.neighborhood || "";
+                if(geoCodingResult.length > 0){
+                    if(geoCodingResult[0].city){
+                        location.city = geoCodingResult[0].city;
+                    }
+
+                    if(geoCodingResult[0].country){
+                        location.country = geoCodingResult[0].country;
+                    }
+                    if(geoCodingResult[0].extra){
+                        if(geoCodingResult[0].extra.neighborhood){
+                            location.neighborhood = geoCodingResult[0].extra.neighborhood || "";
+                        }
+                    }
                 }
+                console.log("geocoder: %j", geoCodingResult);
 
                 db.insertLocation(location, function( locErr, result ){
                     if (locErr) { throw locErr; }
